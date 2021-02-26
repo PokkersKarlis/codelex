@@ -7,7 +7,7 @@
 class NumberSquare
 {
 
-    public function printNumbers()
+    public function printNumbers():void
     {
         $minNumber = filter_var(readline('Min? '), FILTER_VALIDATE_INT);
         while ($minNumber != true || $minNumber < 1) {

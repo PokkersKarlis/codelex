@@ -30,7 +30,7 @@ class RollDiceTwice
         return $this->desiredNumber;
     }
 
-    public function setCustomNumber()
+    public function setCustomNumber():int
     {
         $number = filter_var(readline('Please enter your number 2 - 12 '), FILTER_VALIDATE_INT);
         while ($number != true || $number < 2 || $number > 12) {
