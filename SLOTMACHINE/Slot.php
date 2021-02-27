@@ -14,7 +14,7 @@ class Slot
         return $items[$randomItem];
     }
 
-    public function setItems():void
+    public function setItems(): void
     {
         $lineOne = [];
         while (count($lineOne) < 3) {
@@ -33,21 +33,21 @@ class Slot
         $this->lineThree = $lineThree;
     }
 
-    public function showItems():array
+    public function showItems(): array
     {
         $this->setItems();
         $this->checkWinning();
-        $slot =[];
-         array_push($slot, $this->lineOne, $this->lineTwo, $this->lineThree);
+        $slot = [];
+        array_push($slot, $this->lineOne, $this->lineTwo, $this->lineThree);
         return $slot;
     }
 
-    public function showWinnings():int
+    public function showWinnings(): int
     {
         return $this->winning;
     }
 
-    public function checkWinning():void
+    public function checkWinning(): void
     {
         $winning = [];
         if
