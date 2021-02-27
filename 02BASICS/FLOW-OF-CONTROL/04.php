@@ -8,7 +8,7 @@ class Day
 {
     private int $number;
 
-    public function choice():void
+    public function choice(): void
     {
         do {
             $number = filter_var(readline('Enter day number: '), FILTER_VALIDATE_INT);
@@ -46,24 +46,31 @@ class Day
         }
     }
 
-    public function showThoseFckingDaysWithif():string
+    public function showThoseFckingDaysWithif(): string
     {
         $this->choice();
-        if($this->number != 0 ){
-            if($this->number != 1 ){
-                if($this->number != 2){
-                    if($this->number != 3){
-                        if($this->number != 4){
-                            if($this->number != 5){
-                                if($this->number != 6){
+        if ($this->number != 0) {
+            if ($this->number != 1) {
+                if ($this->number != 2) {
+                    if ($this->number != 3) {
+                        if ($this->number != 4) {
+                            if ($this->number != 5) {
+                                if ($this->number != 6) {
                                     return 'Not a valid day';
-                                }return 'Saturday';
-                            }return 'Friday';
-                        }return 'Thursday';
-                    }return 'Wednesday';
-                }return 'Tuesday';
-            }return 'Monday';
-        } return 'Sunday';
+                                }
+                                return 'Saturday';
+                            }
+                            return 'Friday';
+                        }
+                        return 'Thursday';
+                    }
+                    return 'Wednesday';
+                }
+                return 'Tuesday';
+            }
+            return 'Monday';
+        }
+        return 'Sunday';
     }
 }
 

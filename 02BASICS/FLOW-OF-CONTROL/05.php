@@ -1,7 +1,7 @@
 <?php
 
 //Codelex trainig courses
-//Section "flow-of-control" - exercise 04
+//Section "flow-of-control" - exercise 05
 //Author - K.Pokkers
 
 
