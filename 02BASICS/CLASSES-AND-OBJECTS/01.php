@@ -17,17 +17,17 @@ class Product
         $this->amount = $amountAtStart;
     }
 
-    public function printProduct()
+    public function printProduct():string
     {
         return $this->name . ' price ' . $this->price . ' EUR amount ' . $this->amount;
     }
 
-    public function setPrice(float $price)
+    public function setPrice(float $price):void
     {
         $this->price = $price;
     }
 
-    public function setAmount(int $amount)
+    public function setAmount(int $amount):void
     {
         $this->amount = $amount;
     }
@@ -44,7 +44,7 @@ foreach ($products as $product) {
 }
 $products[0]->setPrice(35.01);
 $products[0]->setAmount(5);
-echo '-----     New prices      -----'. PHP_EOL;
+echo '-----     New prices      -----' . PHP_EOL;
 foreach ($products as $product) {
     echo $product->printProduct() . PHP_EOL;
 }

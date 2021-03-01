@@ -8,18 +8,19 @@ class Swapper
 {
     private int $pointOne;
     private int $pointTwo;
+
     public function __construct(int $pointOne, int $pointTwo)
     {
         $this->pointOne = $pointOne;
         $this->pointTwo = $pointTwo;
     }
 
-    public function getPoints()
+    public function getPoints():string
     {
-        return '('.$this->pointOne. ', '. $this->pointTwo. ')'. PHP_EOL;
+        return '(' . $this->pointOne . ', ' . $this->pointTwo . ')' . PHP_EOL;
     }
 
-    function swapPoints($firstPoints, $secondPoints)
+    function swapPoints($firstPoints, $secondPoints):void
     {
         $switcherOne = $firstPoints->pointOne;
         $switcherTwo = $firstPoints->pointTwo;
@@ -33,7 +34,7 @@ class Swapper
 
 }
 
-$firstPoints = new Swapper(5,2);
+$firstPoints = new Swapper(5, 2);
 $secondPoints = new Swapper(-3, 6);
 
 echo $firstPoints->getPoints();
