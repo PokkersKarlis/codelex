@@ -1,21 +1,31 @@
 <?php
 
 class Shop
-
 {
-    private array $flowers =[];
 
-    /**
-     * @return array
-     */
-    public function getFlowers(): array
+    private array $suppliers = [];
+
+    public function addSupplier(Supplier $supplier): void
     {
-        return $this->flowers;
+        $this->suppliers[] = $supplier;
     }
 
-    public function getAvailableFlowers(WarehouseInterface $flowerCentral, WarehouseInterface $gardener, WarehouseInterface $hippyPlace)
+    public function products(): ProductCollection
     {
-        var_dump($gardener->getFlowers());
+        $products = new ProductCollection();
 
+        foreach ($this->suppliers as $supplier) {
+            $supplierProducts = $supplier->products()->all();
+            foreach ($supplierProducts as $barCode => ['product' => $product, 'amount' => $amount]) {
+                $products->add(
+                    new Product(
+                        $product->sellable(),
+                        $product->price() + ($product->price() * 0.2)
+                    ),
+                    $amount
+                );
+            }
+        }
+        return $products;
     }
 }
